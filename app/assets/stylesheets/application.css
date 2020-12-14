@@ -45,6 +45,9 @@ li a {
 
 .welcomeIm {
     width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .foot {
@@ -55,11 +58,71 @@ li a {
     overflow: auto;
 }
 
-
 .container {
     background-image: url("a.jpg");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
     min-height: 700px;
+}
+
+#booksContainer {
+    width: 100%;
+    text-align: center;
+}
+
+#booksContainer h1 {
+    display: block;
+    color: #4CAF50;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.bookhols {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 22%;
+    padding: 10px;
+    min-height: 300px;
+}
+
+.bookhols h1 {
+    display: block;
+    color: #4CAF50;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px
+}
+
+.bookhols p {
+    display: block;
+    color: #4CAF50;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px
+}
+
+.bookholsIm {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
