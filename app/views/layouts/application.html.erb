@@ -11,19 +11,10 @@
 </head>
 
 <body>
-    <header class="headSec">
-        <h1>Bookstore</h1>
-        <ul>
-            <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "About", about_path %></li>
-        </ul>
-    </header>
-    <div class="container">
+    <%= render 'layouts/header' %> <div class="container">
         <%= yield %>
     </div>
-    <footer class="foot">
-        <h1>Im the Footer</h1>
-    </footer>
+    <%= render 'layouts/footer' %>
 </body>
 
 </html>
