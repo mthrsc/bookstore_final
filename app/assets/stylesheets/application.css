@@ -1,8 +1,9 @@
 .headSec {
     min-height: 10px;
     background-color: #ff0000;
+    background-size: 100% 100%;
+    min-height: 10px;
     width: 100%;
-    margin-bottom: 10px;
     overflow: auto;
     text-align: center;
 }
@@ -36,7 +37,8 @@ li a {
 .mainCont {
     margin: auto;
     width: 80%;
-    border: 3px solid #ff0000; /* a enlever */
+    border: 3px solid #ff0000;
+    /* a enlever */
     padding: 10px;
     text-align: center;
 }
@@ -53,8 +55,9 @@ li a {
     overflow: auto;
 }
 
+
 .container {
-    background: url("a.jpg");
+    background-image: url("a.jpg");
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
