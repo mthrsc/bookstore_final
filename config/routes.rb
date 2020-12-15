@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "cart/index"
   resources :books
   root "static_pages#home"
