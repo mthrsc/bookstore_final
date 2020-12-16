@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   get "orderitems/new"
   get "orderitems/edit"
   resources :orders do
-    resources :orderitems
-  end
+    end
 
   devise_for :users do
     resources :orders
