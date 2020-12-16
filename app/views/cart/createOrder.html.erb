@@ -7,7 +7,7 @@
 <table id="customers">
     <tr>
         <% @orders.limit(1).order(id: :desc).each do |order| %>
-        <td>Order reference for the order you just placed <%= order.id %></td>
+        <td>Order reference for the order you just placed is: <%= order.id %></td>
         <% end %>
     </tr>
 </table>
@@ -27,7 +27,11 @@
         <% @total += timx %>
     </tr>
     <% end %>
+    <td>Order Total: &euro; <%= @total %></td>
+    <% @shipping = 6 %>
+    <% @overall = @shipping + @total %>
     <tr>
-        <td>Order Total: &euro; <%= @total %></td>
+        <td>Shipping &euro;<% @shipping %></td>
+        <td>You Pay &euro; <%= @overall %></td>
     </tr>
 </table>

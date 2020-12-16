@@ -75,5 +75,10 @@ class CartController < ApplicationController
       @orderbooks.save
     end
     @orders = Order.all
+    #Find items from newest order
+    @orderbooks = Orderbook.where(order_id: Order.last) #To improve
+
+    #Empty the cart
+    session[:cart] = nil
   end
 end
