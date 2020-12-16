@@ -71,8 +71,8 @@ class CartController < ApplicationController
     @cart = session[:cart] || {} # Get the content of the Cart
     @cart.each do |id, quantity|
       book = Book.find_by_id(id)
-      @orderitems = @order.orderitems.build(:book_id => book.id, :title => book.title, :description => book.description, :quantity => quantity, :price => book.price)
-      @orderitems.save
+      @orderbooks = @order.orderbooks.build(:book_id => book.id, :title => book.title, :description => book.description, :quantity => quantity, :price => book.price)
+      @orderbooks.save
     end
     redirect_to "/createOrder/"
   end

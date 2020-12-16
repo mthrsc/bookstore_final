@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get "orderitems/index"
-  get "orderitems/show"
-  get "orderitems/new"
-  get "orderitems/edit"
+  get "orderbooks/index"
+  get "orderbooks/show"
+  get "orderbooks/new"
+  get "orderbooks/edit"
   resources :orders do
-    end
+    resources :orderbooks
+  end
 
   devise_for :users do
     resources :orders
