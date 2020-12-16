@@ -74,6 +74,6 @@ class CartController < ApplicationController
       @orderbooks = @order.orderbooks.build(:book_id => book.id, :title => book.title, :description => book.description, :quantity => quantity, :price => book.price)
       @orderbooks.save
     end
-    redirect_to "/createOrder/"
+    @orders = Order.all
   end
 end

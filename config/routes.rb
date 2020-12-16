@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  root "static_pages#home"
+
   get "orderbooks/index"
   get "orderbooks/show"
   get "orderbooks/new"
   get "orderbooks/edit"
+  # get "cart/createOrder"
+
   resources :orders do
     resources :orderbooks
   end
@@ -15,7 +19,6 @@ Rails.application.routes.draw do
 
   get "cart/index"
   resources :books
-  root "static_pages#home"
 
   get "/home" => "static_pages#home"
   get "/about" => "static_pages#about"
