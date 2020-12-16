@@ -1,6 +1,16 @@
 <% provide(:title, "Home") %>
 
 <div class="mainCont">
-<h1>Homepage</h1>
-<p>Show latest arrivals</p>
+    <h1>Homepage</h1>
+    <p>Show latest arrivals</p>
+
+    <table>
+        <% @books.each do |book| %>
+
+        <tr>
+            <%= link_to (image_tag book.image_url, :class => "smallImage"), book%>
+        </tr>
+        <%end%>
+
+    </table>
 </div>
