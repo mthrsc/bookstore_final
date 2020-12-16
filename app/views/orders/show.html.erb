@@ -1,4 +1,4 @@
-<div id="itemsContainer">
+<div id="booksContainer">
     <p id="notice"><%= notice %></p>
     <h1>Order Details</h1>
     <table id="customers">
@@ -19,11 +19,11 @@
     </table>
     <h2>Order Items</h2>
     <table id="customers">
-        <% @orderitems.each do |orderitem| %>
+        <% @orderbooks.each do |orderbook| %>
         <tr>
-            <td><%= orderitem.created_at %></td>
-            <td><%= orderitem.title %></td>
-            <td><%= orderitem.order_id %></td>
+            <td><%= orderbook.created_at %></td>
+            <td><%= orderbook.title %></td>
+            <td><%= orderbook.order_id %></td>
         </tr>
         <% end %>
         <tr>
