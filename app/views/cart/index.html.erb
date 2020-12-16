@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<div id="booksContainer">
+    <% if @cart.empty? %>
+    <h1> Your cart is empty</h1>
+    <%end%>
+    <table id="customers">
+        <% total = 0 %>
+        <% @cart.each do |id, quantity| %>
+        <% book = Book.find_by_id(id) %>
+        <tr>
+            <td>
+                <div class="image">
+                    <%= link_to (image_tag book.image_url, :style =>"height:40px"), book %>
+                </div>
+            </td>
+            <td class="title"><%= link_to book.title, book %></td>
+            <td> <a href="/cart/increase/<%= book.id %>">Add 1 item<i class='fas fa-arrow-alt-circle-down'></i></a></td>
+            </td>
+            <td> <a href="/cart/decrease/<%= book.id %>">Remove 1 item<i class='fas fa-arrow-alt-circle-down'></i></a></td>
+            <td><a href="/cart/remove/<%= book.id %>">Remove From Cart</a></td>
+            </td>
+            <td class="price"><%= number_to_currency(book.price, :unit =>"€") %></td>
+            <td class="quantity"><%= quantity %></td>
+            <td class="price"><%= number_to_currency(quantity * book.price, :unit =>"€") %></td>
+        </tr>
+        <% total += quantity * book.price %>
+        <% end %>
+        <tr>Grang Total: <%= number_to_currency(total, :unit => "€") %>
+        </tr>
+    </table>
+    <p><a href="/books" class="button">Continue Shopping</a></p>
+    <a href="/cart/clear" class="button">Empty Cart</a>
+</div>

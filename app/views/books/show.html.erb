@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div id="booksContainer">
+    <h1><%= @book.title %></h1>
+    <%= image_tag @book.image_url, :class => 'welcomeIm' %>
+    <h2><%= @book.description %></h1>
+        <div class="bookhols">
+            <p>Price <%= number_to_currency(@book.price, :unit => "€") %>
+                <br>
+                Genre: <%= @book.genre %>
+            </p>
+            <p>
+                <%= link_to 'Back', books_path, :class => "button", :role => "button" %>
+                <%= link_to 'Edit', edit_book_path(@book), :class => "button", :role => "button" %>
+            </p>
+        </div>
+</div>
