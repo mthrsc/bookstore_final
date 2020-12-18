@@ -35,5 +35,7 @@ Rails.application.routes.draw do
 
   post "/search" => "books#search"
 
+  #Added for admin console
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

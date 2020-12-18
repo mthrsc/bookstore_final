@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  def index
+  end
+
   def login
     session[:login] = 1
     flash[:notice] = "Admin Login sucessfull!!"

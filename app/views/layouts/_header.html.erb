@@ -5,10 +5,6 @@
             <li><%= link_to "Home", "/" %></li>
             <li><%= link_to "Books", "/books" %></li>
             <li><%= link_to "View Cart", "/cart" %></li>
-            <!--
-        <li><%= link_to "Log In", "/login" %></li>
-        <li><%= link_to "Log Out", "/logout" %></li>
-        -->
             <% if user_signed_in? %>
             <li><a href="#"> Hi <%= current_user.email %></a></li>
             <li><%= link_to "View Orders", orders_path  %></li>
@@ -31,7 +27,6 @@
             <li id="search">
                 <%= submit_tag("Search") %>
                 <% end %>
-
             </li>
     </div>
     </ul>
