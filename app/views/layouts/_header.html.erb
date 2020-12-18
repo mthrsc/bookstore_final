@@ -1,27 +1,38 @@
-<header class="headSec">
-    <h1>Book Store</h1>
-    <ul>
-        <li><%= link_to "Home", "/" %></li>
-        <li><%= link_to "Books", "/books" %></li>
-        <li><%= link_to "View Cart", "/cart" %></li>
-        <!--
+<header>
+    <div class="headSec">
+        <h1>Book Store</h1>
+        <ul>
+            <li><%= link_to "Home", "/" %></li>
+            <li><%= link_to "Books", "/books" %></li>
+            <li><%= link_to "View Cart", "/cart" %></li>
+            <!--
         <li><%= link_to "Log In", "/login" %></li>
         <li><%= link_to "Log Out", "/logout" %></li>
         -->
-        <% if user_signed_in? %>
-        <li><a href="#"> Hi <%= current_user.email %></a></li>
-        <li><%= link_to "View Orders", orders_path  %></li>
-        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
-        <li><%= link_to 'Sign in', new_user_session_path %></li>
-        <% end %>
-        <% if session[:login] == 1 %>
-        <li><%= link_to "Admin Logout", logout_path %></li>
-        <% else %>
-        <li><%= link_to "Admin Login", login_path %></li>
-        <% end %>
-        <li><%= link_to  "About", about_path %></li>
+            <% if user_signed_in? %>
+            <li><a href="#"> Hi <%= current_user.email %></a></li>
+            <li><%= link_to "View Orders", orders_path  %></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <% end %>
+            <% if session[:login] == 1 %>
+            <li><%= link_to "Admin Logout", logout_path %></li>
+            <% else %>
+            <li><%= link_to "Admin Login", login_path %></li>
+            <% end %>
+            <li><%= link_to  "About", about_path %></li>
+            <li id="search">
+                <%= form_tag("/search", :method => "post") do %>
+                <%= text_field_tag(:q) %>
+            </li>
+            <li id="search">
+                <%= submit_tag("Search") %>
+                <% end %>
+
+            </li>
+    </div>
     </ul>
 </header>

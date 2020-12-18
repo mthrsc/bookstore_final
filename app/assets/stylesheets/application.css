@@ -26,19 +26,25 @@ li {
     float: left;
 }
 
+li .button {
+    color: red;
+}
+
+#search {
+    color: #ff0000;
+}
+
 li a {
     display: block;
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    float: left;
 }
 
 .mainCont {
     margin: auto;
-    width: 80%;
-    border: 3px solid #ff0000;
-    /* a enlever */
     padding: 10px;
     text-align: center;
 }
@@ -132,14 +138,14 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(255, 0, 0);
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #ff0000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -149,15 +155,22 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #ff0000;
+    color: rgb(10, 0, 0);
 }
 
-.test{
-    color: black;
-
+#search {
+    float: right;
 }
 
-.smallImage{
+li input[type=submit] {
+    background-color: #ff0000;
+}
+
+li input[type=text] {
+    float: left;
+}
+
+.smallImage {
     width: 15%;
-
 }
