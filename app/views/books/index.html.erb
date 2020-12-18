@@ -2,7 +2,7 @@
 <div id="booksContainer">
     <h1>Books</h1>
     <% @books.each do |book| %>
-    <div class="bookhols">
+    <div class="bookhols" >
         <h1><%= book.title %></h1>
         <%= link_to (image_tag book.image_url, :class => "bookholsIm"), book %>
         <p><%= book.description %></p>

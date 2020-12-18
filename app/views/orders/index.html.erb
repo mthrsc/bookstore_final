@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="booksContainer">
 
-    <h1>Orders INDEX</h1>
+    <h1><%= current_user.email%>'s past orders </h1>
 
     <% if @orders.length() == 0 %>
     <p>
