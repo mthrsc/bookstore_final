@@ -1,11 +1,12 @@
 class UserController < ApplicationController
-  def index
-  end
-
   def login
     session[:login] = 1
     flash[:notice] = "Admin Login sucessfull!!"
-    redirect_to :controller => :books
+    if current_user.admin == false
+      redirect_to :controller => :books
+    elsif current_user.admin == true
+      redirect_to :controller => :admin
+    end
   end
 
   def logout

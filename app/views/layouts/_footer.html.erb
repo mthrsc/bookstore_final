@@ -1,3 +1,5 @@
 <footer class="foot">
-<h1>Im the Footer</h1>
+    <% if user_signed_in? %>
+     Hi <%= current_user.email %>
+    <% end %>
 </footer>
