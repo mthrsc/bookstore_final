@@ -174,3 +174,7 @@ li input[type=text] {
 .smallImage {
     width: 15%;
 }
+
+.actions{
+    width: 10%;
+}
