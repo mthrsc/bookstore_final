@@ -7,19 +7,29 @@ class AdminController < ApplicationController
     end
   end
 
-  def manage_users
-  end
-
-  def manage_books
+  def showuser
+    id = params[:id]
+    @user = User.find(id)
   end
 
   def searchuser
-    st = "%#{params[:q]}%"
-    @users = User.where("email like ?", st)
+    @st = "%#{params[:q]}%"
+    @users = User.where("email like ?", @st)
     puts "-----length: #{@users.length()}\n"
   end
 
-  def makeadmin
+  def promote
+    id = params[:id]
+    user = User.find(id)
+    user.admin = true
+    user.save
+  end
+
+  def demote
+    id = params[:id]
+    user = User.find(id)
+    user.admin = false
+    user.save
   end
 
   def deleteuser
@@ -27,7 +37,6 @@ class AdminController < ApplicationController
     puts "-----delete user #{id}\n"
     user = User.find(id)
     user.destroy
-    searchuser(@search_term)
   end
 
   protected

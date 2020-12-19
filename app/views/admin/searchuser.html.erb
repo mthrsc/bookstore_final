@@ -5,30 +5,31 @@
 <% end %>
 <table class="catalog">
     <% @users.each do |u| %>
-    <tr>
-        <td>
-            ID: <%= u.id%>
-        </td>
-        <td>
-            Email: <%= u.email%>
-        </td>
-        <td>
-            Admin: <%= u.admin%>
-        </td>
+        <tr>
+            <td>
+                <a href="/showuser/<%=u.id%>"> ID: <%= u.id%> </a>
+            </td>
+            <td>
+                <a href="/showuser/<%=u.id%>"> Email: <%= u.email%></a>
+            </td>
+            <td>
+                <a href="/showuser/<%=u.id%>"> Admin: <%= u.admin%></a>
+            </td>
 
-        <td>
-            <div class="links">
-                <!--   <%= link_to 'Edit', edit_user_registration_path(u) %> -->
-                <% if u.admin%>
-                <a href="/promote/<%=u.id%>">Remove admin rights</a>
-                <% end %>
+            <td>
+                <!--     <div class="links">
+
                 <% if !u.admin%>
-                <a href="/demote/<%=u.id%>">Grant admin rights</a>
+                <a href="/promote/<%=u.id%>">Grant admin rights</a>
+                <% end %>
+                <% if u.admin%>
+                <a href="/demote/<%=u.id%>">Remove admin rights</a>
                 <% end %>
 
-                <a href="/deleteuser/<%=u.id%>">Delete user</a> <!-- To replace with DISABLE!!! check devise, or add enabled field in database-->
-            </div>
-        </td>
-    </tr>
-    <% end %>
+                <a href="/deleteuser/<%=u.id%>">Delete user</a>  To replace with DISABLE!!! check devise, or add enabled field in database
+                </div>
+                -->
+            </td>
+        </tr>
+        <% end %>
 </table>

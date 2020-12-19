@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   # get "/deleteuser/:id" => "admin#deleteuser"
   get "/promote/:id" => "admin#promote"
   get "/demote/:id" => "admin#demote"
+  get "/showuser/:id" => "admin#showuser"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
