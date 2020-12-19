@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "orderbooks/show"
   get "orderbooks/new"
   get "orderbooks/edit"
+  get "users/edit"
   # get "cart/createOrder"
 
   resources :orders do
@@ -38,6 +39,13 @@ Rails.application.routes.draw do
   #Added for admin console
   get "/admin/index"
   get "admin" => "admin#index"
+  get "/admin/manageusers" => "admin#manage_users"
+  get "/admin/managebooks" => "admin#manage_books"
+  post "/searchuser" => "admin#searchuser"
+  post "/searchbook" => "admin#searchbook"
+  # get "/deleteuser/:id" => "admin#deleteuser"
+  get "/promote/:id" => "admin#promote"
+  get "/demote/:id" => "admin#demote"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

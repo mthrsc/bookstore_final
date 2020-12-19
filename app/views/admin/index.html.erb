@@ -1,3 +1,14 @@
 <h1>Admin console</h1>
 
 <p>Welcome admin</p>
+
+<%= link_to 'Manage users', admin_manageusers_url, :class => "button", :role => "button" %>
+<%= link_to 'Manage books', admin_managebooks_url, :class => "button", :role => "button" %>
+
+
+<div id="search">
+    <%= form_tag("/searchuser", :method => "post") do %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search user") %>
+    <% end %>
+</div>

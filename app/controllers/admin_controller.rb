@@ -13,6 +13,23 @@ class AdminController < ApplicationController
   def manage_books
   end
 
+  def searchuser
+    st = "%#{params[:q]}%"
+    @users = User.where("email like ?", st)
+    puts "-----length: #{@users.length()}\n"
+  end
+
+  def makeadmin
+  end
+
+  def deleteuser
+    id = params[:id]
+    puts "-----delete user #{id}\n"
+    user = User.find(id)
+    user.destroy
+    searchuser(@search_term)
+  end
+
   protected
 
   def is_admin?

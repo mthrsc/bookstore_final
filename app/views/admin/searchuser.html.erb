@@ -1,0 +1,34 @@
+<h2>You Searched Our Product Catalog For <%= @search_term %></h2>
+<% if @users.length == 0  %>
+<br />
+<h2>No products were found to match your search</h2>
+<% end %>
+<table class="catalog">
+    <% @users.each do |u| %>
+    <tr>
+        <td>
+            ID: <%= u.id%>
+        </td>
+        <td>
+            Email: <%= u.email%>
+        </td>
+        <td>
+            Admin: <%= u.admin%>
+        </td>
+
+        <td>
+            <div class="links">
+                <!--   <%= link_to 'Edit', edit_user_registration_path(u) %> -->
+                <% if u.admin%>
+                <a href="/promote/<%=u.id%>">Remove admin rights</a>
+                <% end %>
+                <% if !u.admin%>
+                <a href="/demote/<%=u.id%>">Grant admin rights</a>
+                <% end %>
+
+                <a href="/deleteuser/<%=u.id%>">Delete user</a> <!-- To replace with DISABLE!!! check devise, or add enabled field in database-->
+            </div>
+        </td>
+    </tr>
+    <% end %>
+</table>
