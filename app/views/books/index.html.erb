@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 <div id="booksContainer">
     <h1>Books</h1>
-    <% @books.each do |book| %>
-    <div class="bookhols" >
-        <h1><%= book.title %></h1>
-        <%= link_to (image_tag book.image_url, :class => "bookholsIm"), book %>
-        <p><%= book.description %></p>
-        <p>Price <%= number_to_currency(book.price, :unit => "€") %>
-            <br>
-            Genre: <%= book.genre %>
-        </p>
-        <p>
-            <a href="/cart/<%= book.id %>" class="button">Add To Cart</a>
-            <%= link_to 'Show', book, :class => "button", :role => "button" %>
-            <% if session[:login] == 1 %>
-            <%= link_to 'Edit', edit_book_path(book), :class =>"button", :role=>"button" %>
-            <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
-            <% end %>
-        </p>
-    </div>
-    <% end %>
+    <table>
+        <% @books.each do |book| %>
+        <div class="bookhols">
+            <h1><%= book.title %></h1>
+            <%= link_to (image_tag book.image_url, :class => "bookholsIm"), book %>
+            <p><%= book.description %></p>
+            <p>Price <%= number_to_currency(book.price, :unit => "€") %>
+                <br>
+                Genre: <%= book.genre %>
+            </p>
+            <p>
+                <a href="/cart/<%= book.id %>" class="button">Add To Cart</a>
+                <%= link_to 'Show', book, :class => "button", :role => "button" %>
+                <% if user_signed_in? && current_user.admin%>
+                <%= link_to 'Edit', edit_book_path(book), :class =>"button", :role=>"button" %>
+                <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button" %>
+                <% end %>
+            </p>
+        </div>
+        <% end %>
+    </table>
 </div>
 <br>
-<% if session[:login] == 1 %>
+<% if user_signed_in? && current_user.admin%>
 <%= link_to 'New book', new_book_path, :class => "button", :role => "button" %>
 <% end %>
