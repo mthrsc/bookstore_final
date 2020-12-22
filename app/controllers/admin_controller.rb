@@ -29,10 +29,10 @@ class AdminController < ApplicationController
     @st = "%#{params[:q]}%"
     t = params[:type]
     if t == "title"
-    @books = Book.where("title like ?", @st)
+      @books = Book.where("title like ?", @st)
     end
     if t == "id"
-    @books = Book.where("id like ?", @st)
+      @books = Book.where("id like ?", @st)
     end
   end
 
@@ -41,16 +41,32 @@ class AdminController < ApplicationController
     user = User.find(id)
     user.admin = true
     user.save
-    redirect_back(fallback_location: root_path) 
-    end
+    redirect_back(fallback_location: root_path)
+  end
 
   def demote
     id = params[:id]
     user = User.find(id)
     user.admin = false
     user.save
-    redirect_back(fallback_location: root_path) 
-    end
+    redirect_back(fallback_location: root_path)
+  end
+
+  def enable
+    id = params[:id]
+    user = User.find(id)
+    user.deactivated = false
+    user.save
+    redirect_back(fallback_location: root_path)
+  end
+
+  def disable
+    id = params[:id]
+    user = User.find(id)
+    user.deactivated = true
+    user.save
+    redirect_back(fallback_location: root_path)
+  end
 
   def deleteuser
     id = params[:id]

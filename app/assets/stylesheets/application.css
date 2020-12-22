@@ -89,7 +89,6 @@ li a {
 }
 
 .bookhols {
-    
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -136,7 +135,8 @@ li a {
     cursor: pointer;
 }
 
-input[type=text], select {
+input[type=text],
+select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -166,10 +166,11 @@ input[type=submit]:hover {
     float: right;
 }
 
-#searchuser_admin{
+#searchuser_admin {
     float: left;
 }
-#searchbook_admin{
+
+#searchbook_admin {
     float: right;
 }
 

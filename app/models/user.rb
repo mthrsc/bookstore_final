@@ -8,5 +8,13 @@ class User < ApplicationRecord
     params.require(:user).permit(:email, :password, :password_confirmation, :remember_me)
   end
 
+  def destroy
+    update_attributes(deactivated: true) unless deactivated
+  end
+
+  def active_for_authentication?
+    super && !deactivated
+  end
+
   has_many :orders
 end
