@@ -5,10 +5,38 @@
 <%= link_to 'Manage users', admin_manageusers_url, :class => "button", :role => "button" %>
 <%= link_to 'Manage books', admin_managebooks_url, :class => "button", :role => "button" %>
 
+<br />
 
-<div id="search">
+<table>
+<tr>
+<td>user management</td>
+<td>book management</td>
+</tr>
+<tr>
+<td>
+<div id="searchbook_admin">
     <%= form_tag("/searchuser", :method => "post") do %>
     <%= text_field_tag(:q) %>
     <%= submit_tag("Search user") %>
     <% end %>
 </div>
+</td>
+
+<td>
+<div id="searchbook_admin">
+    <%= form_tag("/searchbook", :method => "post") do %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search book") %>
+    <% end %>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+Add book
+Add book
+</td>
+</tr>
+</table>

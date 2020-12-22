@@ -166,6 +166,13 @@ input[type=submit]:hover {
     float: right;
 }
 
+#searchuser_admin{
+    float: left;
+}
+#searchbook_admin{
+    float: right;
+}
+
 li input[type=submit] {
     background-color: #ff0000;
 }
