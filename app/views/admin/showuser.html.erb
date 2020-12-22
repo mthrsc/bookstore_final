@@ -5,7 +5,8 @@ Email: <%=@user.email%>
 
 Admin :  <%=@user.admin %>
 
-
+<a href="/promote/<%= @user.id %>" class="button">Promote</a>
+<a href="/demote/<%= @user.id %>" class="button">Demote</a>
 
 <br/>
 

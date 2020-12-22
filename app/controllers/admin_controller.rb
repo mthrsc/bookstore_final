@@ -41,14 +41,16 @@ class AdminController < ApplicationController
     user = User.find(id)
     user.admin = true
     user.save
-  end
+    redirect_back(fallback_location: root_path) 
+    end
 
   def demote
     id = params[:id]
     user = User.find(id)
     user.admin = false
     user.save
-  end
+    redirect_back(fallback_location: root_path) 
+    end
 
   def deleteuser
     id = params[:id]
