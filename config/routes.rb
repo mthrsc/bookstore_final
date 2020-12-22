@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "orderbooks/show"
   get "orderbooks/new"
   get "orderbooks/edit"
-  get "users/edit"
+  get "user/edit"
   # get "cart/createOrder"
 
   resources :orders do
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get "/admin/managebooks" => "admin#manage_books"
   post "/searchuser" => "admin#searchuser"
   post "/searchbook" => "admin#searchbook"
-  # get "/deleteuser/:id" => "admin#deleteuser"
+
   get "/promote/:id" => "admin#promote"
   get "/demote/:id" => "admin#demote"
   get "/showuser/:id" => "admin#showuser"

@@ -14,8 +14,26 @@ class AdminController < ApplicationController
 
   def searchuser
     @st = "%#{params[:q]}%"
-    @users = User.where("email like ?", @st)
+    t = params[:type]
+    if t == "email"
+      @users = User.where("email like ?", @st)
+    end
+    if t == "id"
+      @users = User.where("id like ?", @st)
+    end
     puts "-----length: #{@users.length()}\n"
+    puts "-----type: #{t}"
+  end
+
+  def searchbook
+    @st = "%#{params[:q]}%"
+    t = params[:type]
+    if t == "title"
+    @books = Book.where("title like ?", @st)
+    end
+    if t == "id"
+    @books = Book.where("id like ?", @st)
+    end
   end
 
   def promote

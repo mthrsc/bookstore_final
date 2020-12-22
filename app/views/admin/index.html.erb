@@ -2,9 +2,6 @@
 
 <p>Welcome admin</p>
 
-<%= link_to 'Manage users', admin_manageusers_url, :class => "button", :role => "button" %>
-<%= link_to 'Manage books', admin_managebooks_url, :class => "button", :role => "button" %>
-
 <br />
 
 <table>
@@ -14,11 +11,15 @@
 </tr>
 <tr>
 <td>
-<div id="searchbook_admin">
+<div id="searchuser_admin">
     <%= form_tag("/searchuser", :method => "post") do %>
     <%= text_field_tag(:q) %>
+    <%= radio_button_tag(:type, "email", checked: true) %>
+    <%= label_tag(:label, "Search by email") %>
+    <%= radio_button_tag(:type, "id") %>
+    <%= label_tag(:label, "Search by id") %>
     <%= submit_tag("Search user") %>
-    <% end %>
+<% end %>
 </div>
 </td>
 
@@ -26,8 +27,12 @@
 <div id="searchbook_admin">
     <%= form_tag("/searchbook", :method => "post") do %>
     <%= text_field_tag(:q) %>
+    <%= radio_button_tag(:type, "title", checked: true) %>
+    <%= label_tag(:label, "Search by title") %>
+    <%= radio_button_tag(:type, "id") %>
+    <%= label_tag(:label, "Search by id") %>
     <%= submit_tag("Search book") %>
-    <% end %>
+<% end %>
 </div>
 </td>
 </tr>
@@ -35,7 +40,6 @@
 <td>
 </td>
 <td>
-Add book
 Add book
 </td>
 </tr>

@@ -1,0 +1,20 @@
+<h2>You Searched Our Product Catalog For <%= @search_term %></h2>
+<% if @books.length == 0  %>
+<br />
+<h2>No products were found to match your search</h2>
+<% end %>
+<table class="catalog">
+    <% @books.each do |b| %>
+        <tr>
+            <td>
+                <a href="/showuser/<%=b.id%>"> ID: <%= b.id%> </a>
+            </td>
+            <td>
+                <a href="/showuser/<%=b.id%>"> Title: <%= b.title%></a>
+            </td>
+
+            <td>
+            </td>
+        </tr>
+        <% end %>
+</table>
