@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "orderbooks/new"
   get "orderbooks/edit"
   get "user/edit"
-  get "/book" => "books#index"
 
   # get "cart/createOrder"
 
@@ -26,8 +25,8 @@ Rails.application.routes.draw do
   get "/home" => "static_pages#home"
   get "/about" => "static_pages#about"
 
-  get "/login" => "user#login"
-  get "/logout" => "user#logout"
+  # get "/login" => "user#login"
+  # get "/logout" => "user#logout"
 
   get "/cart/clear" => "cart#clear"
   get "/cart" => "cart#index"
@@ -37,7 +36,7 @@ Rails.application.routes.draw do
   get "/cart/decrease/:id" => "cart#decrease"
 
   post "/search" => "books#search"
-  post "/book/filter/" => "books#filter"
+  post "/filter" => "books#filter"
 
   #Added for admin console
   get "/admin/index"

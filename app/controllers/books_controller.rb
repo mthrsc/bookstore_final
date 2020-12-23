@@ -7,6 +7,8 @@ class BooksController < ApplicationController
   end
 
   def filter
+    @books = nil
+    t = nil
     t = params[:type]
     puts "----filter: #{t}"
     @books = Book.where("genre like ?", t)

@@ -2,20 +2,20 @@
 
 <table id="filter">
 <td>
-    <%= form_tag("/book/filter", :method => "post") do %>
-    <%= radio_button_tag(:type, "Scifi", checked: true) %>
-    <%= label_tag(:label, "Scifi") %>
-</td>
-<td>
-    <%= radio_button_tag(:type, "fantasy") %>
-    <%= label_tag(:label, "Fantasy") %>
-</td>
-<td>
-    <%= submit_tag("Filter") %>
-    <%end%>
-</td>
-<td>
-    <a href="/book" class="button">Clear filter</a>
+    <tr>
+        <%= form_tag("/filter", :method => "post") do %>
+        <%= radio_button_tag(:type, "Scifi", checked: true) %>
+        <%= label_tag(:label, "Scifi") %>
+        <br/>
+        <%= radio_button_tag(:type, "fantasy") %>
+        <%= label_tag(:label, "Fantasy") %>
+        <br/>
+        <%= submit_tag("Filter") %>
+        <%end%>
+    </tr>
+    <tr>
+    <a href="/books" class="button">Clear filter</a>
+    </tr>
 </td>
 </table>
 
