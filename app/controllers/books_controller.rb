@@ -3,7 +3,21 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
+    t = params[:type]
+    puts "----filter: #{t}"
+
+    if t == nil
+      @books = Book.all
+    elsif t != nil
+      @books = Book.where("genre like ?", t)
+    end
+  end
+
+  def filter
+    t = params[:type]
+    puts "----filter: #{t}"
+    @books = Book.where("genre like ?", t)
+    render index
   end
 
   # GET /books/1

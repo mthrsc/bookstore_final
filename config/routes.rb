@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "orderbooks/new"
   get "orderbooks/edit"
   get "user/edit"
+  get "/book" => "books#index"
+
   # get "cart/createOrder"
 
   resources :orders do
@@ -35,6 +37,7 @@ Rails.application.routes.draw do
   get "/cart/decrease/:id" => "cart#decrease"
 
   post "/search" => "books#search"
+  post "/book/filter" => "books#index"
 
   #Added for admin console
   get "/admin/index"

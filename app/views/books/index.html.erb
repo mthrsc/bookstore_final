@@ -4,15 +4,19 @@
 Filter:
 </li>
 <li>
-    <%= radio_button_tag(:type, "filter", checked: true) %>
+    <%= form_tag("/book/filter", :method => "post") do %>
+    <%= radio_button_tag(:type, "science", checked: true) %>
     <%= label_tag(:label, "Scifi") %>
 </li>
 <li>
-    <%= radio_button_tag(:type, "filter") %>
+    <%= radio_button_tag(:type, "fantasy") %>
     <%= label_tag(:label, "Fantasy") %>
 </li>
 <li>
-
+    <%= submit_tag("Filter") %>
+    <%end%>
+</li>
+<li>
 </li>
 </ul>
 <div id="booksContainer">
