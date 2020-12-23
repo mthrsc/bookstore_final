@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get "orderbooks/edit"
   get "user/edit"
 
-  # get "cart/createOrder"
-
   resources :orders do
     resources :orderbooks
   end
@@ -24,9 +22,6 @@ Rails.application.routes.draw do
 
   get "/home" => "static_pages#home"
   get "/about" => "static_pages#about"
-
-  # get "/login" => "user#login"
-  # get "/logout" => "user#logout"
 
   get "/cart/clear" => "cart#clear"
   get "/cart" => "cart#index"

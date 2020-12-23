@@ -1,24 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<table id="filter">
-<td>
-    <tr>
-        <%= form_tag("/filter", :method => "post") do %>
-        <%= radio_button_tag(:type, "Scifi", checked: true) %>
-        <%= label_tag(:label, "Scifi") %>
-        <br/>
-        <%= radio_button_tag(:type, "fantasy") %>
-        <%= label_tag(:label, "Fantasy") %>
-        <br/>
-        <%= submit_tag("Filter") %>
-        <%end%>
-    </tr>
-    <tr>
-    <a href="/books" class="button">Clear filter</a>
-    </tr>
-</td>
-</table>
-
 <div id="booksContainer">
     <h1>Books</h1>
     <table>
