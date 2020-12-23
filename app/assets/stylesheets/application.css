@@ -200,4 +200,15 @@ li input[type=text] {
 
 #filter {
     background-color: white;
+    display: block;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+#filter [type=submit] {
+    color: white;
+}
+
+#filter .button {
+    color: white;
 }
