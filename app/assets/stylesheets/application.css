@@ -188,3 +188,16 @@ li input[type=text] {
 .actions {
     width: 10%;
 }
+
+.field {
+    text-align: left;
+    width: 50%;
+}
+
+.field label {
+    color: red;
+}
+
+#filter {
+    background-color: white;
+}

@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
+<ul id="filter">
+<li>
+Filter:
+</li>
+<li>
+    <%= radio_button_tag(:type, "filter", checked: true) %>
+    <%= label_tag(:label, "Scifi") %>
+</li>
+<li>
+    <%= radio_button_tag(:type, "filter") %>
+    <%= label_tag(:label, "Fantasy") %>
+</li>
+<li>
+
+</li>
+</ul>
 <div id="booksContainer">
     <h1>Books</h1>
     <table>

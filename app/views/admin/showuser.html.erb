@@ -1,20 +1,20 @@
 <h3>ID: <%= @user.id %></h3>
 <br/>
-<h3>Email: <%=@user.email%></h3>
+<h3>Email: <%= @user.email %></h3>
 <br/>
-<%if @user.deactivated%>
+<% if @user.deactivated %>
 <h3>Status: Account disabled
 <a href="/enable/<%= @user.id %>" class="button">Enable account</a></h3>
 <% else %>
 <h3>Status: Account ok
 <a href="/disable/<%= @user.id %>" class="button">Disable account</a></h3>
 <% end %>
-<% if !@user.admin%>
-<h3>Admin :  <%=@user.admin %>
+<% if !@user.admin %>
+<h3>Admin :  <%= @user.admin %>
 <a href="/promote/<%= @user.id %>" class="button">Promote to admin</a></h3>
 <% end %>
-<% if @user.admin%>
-<h3>Admin :  <%=@user.admin %>
+<% if @user.admin %>
+<h3>Admin :  <%= @user.admin %>
 <a href="/demote/<%= @user.id %>" class="button">Demote to user</a></h3>
 <% end %>
 
