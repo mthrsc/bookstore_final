@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   get "/cart/decrease/:id" => "cart#decrease"
 
   post "/search" => "books#search"
-  post "/filter" => "books#filter"
 
   #Added for admin console
   get "/admin/index"
