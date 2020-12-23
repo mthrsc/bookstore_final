@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get "/promote/:id" => "admin#promote"
   get "/demote/:id" => "admin#demote"
   get "/showuser/:id" => "admin#showuser"
+  get "/showbook/:id" => "admin#showbook"
 
   get "/enable/:id" => "admin#enable"
   get "/disable/:id" => "admin#disable"

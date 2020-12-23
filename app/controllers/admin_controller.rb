@@ -12,6 +12,11 @@ class AdminController < ApplicationController
     @user = User.find(id)
   end
 
+  def showbook
+    id = params[:id]
+    @book = Book.find(id)
+  end
+
   def searchuser
     @st = "%#{params[:q]}%"
     t = params[:type]
