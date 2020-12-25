@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   post "/search" => "books#search"
 
+  get "category/:title", to: "static_pages#category"
+
   #Added for admin console
   get "/admin/index"
   get "admin" => "admin#index"

@@ -3,11 +3,15 @@
 <div id="booksContainer">
     
     <!-- Cat. loop-->
-    <h1>Categories</h1>
     <br>
-    <% @categories.each do |category| %> <div class="itemhols">
-    <p><%= category.description %></p> </div>
+    <div class="category">
+    <ul >
+    <li><b>Categories: </b></li>
+    <% @categories.each do |category| %> 
+    <li><a href="/category/<%= category.title %>"><%= category.title %></a></li>
     <% end %>    
+    </ul>
+    </div>
 
     <table>
         <% @books.each do |book| %>

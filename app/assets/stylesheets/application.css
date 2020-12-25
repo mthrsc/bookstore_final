@@ -198,17 +198,23 @@ li input[type=text] {
     color: red;
 }
 
-#filter {
+.category {
     background-color: white;
-    display: block;
-    padding-top: 10px;
-    text-decoration: none;
+    text-decoration: red;
 }
 
-#filter [type=submit] {
-    color: white;
+.category ul {
+    background-color: white;
+    text-decoration: red;
 }
 
-#filter .button {
-    color: white;
+.category li {
+    padding-right: 20px;
+    color: red;
+}
+
+.category li a {
+    padding-top: 0px;
+    padding-right: 20px;
+    color: red;
 }
