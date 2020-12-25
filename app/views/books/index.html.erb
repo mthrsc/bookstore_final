@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <div id="booksContainer">
-    <h1>Books</h1>
+    
+    <!-- Cat. loop-->
+    <h1>Categories</h1>
+    <br>
+    <% @categories.each do |category| %> <div class="itemhols">
+    <p><%= category.description %></p> </div>
+    <% end %>    
+
     <table>
         <% @books.each do |book| %>
         <div class="bookhols">

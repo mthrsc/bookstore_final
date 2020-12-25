@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
+    @categories = Category.all
   end
 
   # GET /books/1
