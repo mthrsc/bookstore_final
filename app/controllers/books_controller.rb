@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @cat = Category.all
   end
 
   # GET /books/1/edit
@@ -23,7 +24,7 @@ class BooksController < ApplicationController
   # POST /books
   def create
     @book = Book.new(book_params)
-
+    @book.genre = params[:genre]
     if @book.save
       redirect_to @book, notice: "Book was successfully created."
     else

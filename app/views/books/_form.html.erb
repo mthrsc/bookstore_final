@@ -32,15 +32,18 @@
 </div>
 
 <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre, id: :book_genre, :type => "text" %>
-</div>
+    <%= form.label :Genre %>
 
-<select id="credit_card" name="credit_card">
+<select id="genre" name="genre">
 
-<option>VISA</option><option selected="selected">MasterCard</option>
+    <% @cat.each do |c| %> 
+    <option><%= c.title %></option>
+    <% end %>
 
 </select>
+
+</div>
+
 
 <div class="actions">
     <%= form.submit %>
