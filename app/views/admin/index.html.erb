@@ -5,42 +5,50 @@
 <br />
 
 <table>
-<tr>
-<td>user management</td>
-<td>book management</td>
-</tr>
-<tr>
-<td>
-<div id="searchuser_admin">
-    <%= form_tag("/searchuser", :method => "post") do %>
-    <%= text_field_tag(:q) %>
-    <%= radio_button_tag(:type, "email", checked: true) %>
-    <%= label_tag(:label, "Search by email") %>
-    <%= radio_button_tag(:type, "id") %>
-    <%= label_tag(:label, "Search by id") %>
-    <%= submit_tag("Search user") %>
-    <% end %>
-</div>
-</td>
+    <tr>
+    <td>user management</td>
+    <td>book management</td>
+    </tr>
+    <tr>
+    <td>
+    <div id="searchuser_admin">
+        <%= form_tag("/searchuser", :method => "post") do %>
+        <%= text_field_tag(:q) %>
+        <%= radio_button_tag(:type, "email", checked: true) %>
+        <%= label_tag(:label, "Search by email") %>
+        <%= radio_button_tag(:type, "id") %>
+        <%= label_tag(:label, "Search by id") %>
+        <%= submit_tag("Search user") %>
+        <% end %>
+    </div>
+    </td>
 
-<td>
-<div id="searchbook_admin">
-    <%= form_tag("/searchbook", :method => "post") do %>
-    <%= text_field_tag(:q) %>
-    <%= radio_button_tag(:type, "title", checked: true) %>
-    <%= label_tag(:label, "Search by title") %>
-    <%= radio_button_tag(:type, "id") %>
-    <%= label_tag(:label, "Search by id") %>
-    <%= submit_tag("Search book") %>
-    <% end %>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<%= link_to "Add book", new_book_path, :class => "button", :role => "button" %>
-</td>
-</tr>
+    <td>
+    <div id="searchbook_admin">
+        <%= form_tag("/searchbook", :method => "post") do %>
+        <%= text_field_tag(:q) %>
+        <%= radio_button_tag(:type, "title", checked: true) %>
+        <%= label_tag(:label, "Search by title") %>
+        <%= radio_button_tag(:type, "id") %>
+        <%= label_tag(:label, "Search by id") %>
+        <%= submit_tag("Search book") %>
+        <% end %>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    </td>
+    <td>
+        <%= link_to "Add book", new_book_path, :class => "button", :role => "button" %>
+    </td>
+    </tr>
+    <tr>
+        <td>
+    </td>
+
+    <td>
+        <%= link_to 'New book category', new_category_path, :class =>"button", :role=>"button" %>
+    </td>
+    </tr>
 </table>
