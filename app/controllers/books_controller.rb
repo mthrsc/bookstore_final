@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  @maxPrice
+  @minPrice
+
   # GET /books
   def index
     @books = Book.all
@@ -51,6 +54,11 @@ class BooksController < ApplicationController
   def search
     st = "%#{params[:q]}%"
     @books = Book.where("title like ?", st)
+  end
+
+  def pricefilter
+    @minPrice = params[:min]
+    @maxPrice = params[:max]
   end
 
   private

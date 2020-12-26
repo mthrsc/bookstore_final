@@ -5,12 +5,18 @@
     <!-- Cat. loop-->
     <br>
     <div class="category">
-    <ul >
-    <li><b>Categories: </b></li>
-    <% @categories.each do |category| %> 
-    <li><a href="/category/<%= category.title %>"><%= category.title %></a></li>
-    <% end %>    
-    </ul>
+        <ul >
+            <li><b>Categories: </b></li>
+            <% @categories.each do |category| %> 
+                <li><a href="/category/<%= category.title %>"><%= category.title %></a></li>
+            <% end %>    
+        </ul>
+
+        <%= form_tag(controller: "books", action: "pricefilter", method: "get") do %>
+        <%= label_tag("Min price:") %> <%= text_field_tag(:min) %>
+        <%= label_tag("Max price:") %> <%= text_field_tag(:max) %>
+        <%= submit_tag("Search") %>
+        <% end %>
     </div>
 
     <table>
