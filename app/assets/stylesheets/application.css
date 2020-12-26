@@ -109,7 +109,7 @@ li a {
 
 .bookhols p {
     display: block;
-    color: #4CAF50;
+    color: #f8413b;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -201,6 +201,12 @@ li input[type=text] {
 .category {
     background-color: white;
     text-decoration: red;
+}
+
+.price_filter {
+    float: right;
+    width: 25%;
+    padding-right: 5%;
 }
 
 .category ul {

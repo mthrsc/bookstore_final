@@ -1,13 +1,32 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  @maxPrice
-  @minPrice
+  $maxPrice = 0.0
+  $minPrice = 0.0
 
   # GET /books
   def index
-    @books = Book.all
+    puts "----- index min: #{$minPrice} --max: #{$maxPrice}"
+
+    @b = Book.all
+    @books = Array.new
+    puts "----- index b.length = #{@b.length()}"
+
+    if $minPrice == 0.0 && $maxPrice == 0.0
+      puts "----- index add all"
+      @books = @b
+    else
+      @b.each do |book|
+        puts "----- index  #{book.title} -- #{book.price}"
+
+        if book.price > $minPrice && book.price < $maxPrice
+          @books << book
+        end
+      end
+    end
     @categories = Category.all
+    $maxPrice = 0.0
+    $minPrice = 0.0
   end
 
   # GET /books/1
@@ -57,8 +76,10 @@ class BooksController < ApplicationController
   end
 
   def pricefilter
-    @minPrice = params[:min]
-    @maxPrice = params[:max]
+    $minPrice = params[:min].to_f
+    $maxPrice = params[:max].to_f
+    puts "----- pricefilter min: #{$minPrice} --max: #{$maxPrice}"
+    redirect_to books_url
   end
 
   private

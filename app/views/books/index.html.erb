@@ -11,14 +11,14 @@
                 <li><a href="/category/<%= category.title %>"><%= category.title %></a></li>
             <% end %>    
         </ul>
-
+    </div>
+    <div class="price_filter">
         <%= form_tag(controller: "books", action: "pricefilter", method: "get") do %>
         <%= label_tag("Min price:") %> <%= text_field_tag(:min) %>
         <%= label_tag("Max price:") %> <%= text_field_tag(:max) %>
         <%= submit_tag("Search") %>
         <% end %>
     </div>
-
     <table>
         <% @books.each do |book| %>
         <div class="bookhols">

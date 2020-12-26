@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get "category/:title", to: "static_pages#category"
   get "books/pricefilter"
+  post "books/pricefilter"
 
   #Added for admin console
   get "/admin/index"
