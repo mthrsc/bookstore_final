@@ -26,8 +26,6 @@ class AdminController < ApplicationController
     if t == "id"
       @users = User.where("id like ?", @st)
     end
-    puts "-----length: #{@users.length()}\n"
-    puts "-----type: #{t}"
   end
 
   def searchbook
@@ -39,6 +37,9 @@ class AdminController < ApplicationController
     if t == "id"
       @books = Book.where("id like ?", @st)
     end
+  end
+
+  def updatebook
   end
 
   def promote
@@ -78,6 +79,10 @@ class AdminController < ApplicationController
     puts "-----delete user #{id}\n"
     user = User.find(id)
     user.destroy
+  end
+
+  def book_params
+    params.require(:book).permit(:title, :description, :price, :image_url, :genre)
   end
 
   protected

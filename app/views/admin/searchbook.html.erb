@@ -1,5 +1,5 @@
 <h2>You Searched Our Product Catalog For <%= @search_term %></h2>
-<% if @books.length == 0  %>
+<% if @books.length == 0 %>
 <br />
 <h2>No products were found to match your search</h2>
 <% end %>
@@ -7,10 +7,10 @@
     <% @books.each do |b| %>
         <tr>
             <td>
-                <a href="/showbook/<%=b.id%>"> ID: <%= b.id%> </a>
+                <a href="/book/edit/<%= b.id %>"> ID: <%= b.id %> </a>
             </td>
             <td>
-                <a href="/showbook/<%=b.id%>"> Title: <%= b.title%></a>
+                <a href="/book/edit/<%= b.id %>"> Title: <%= b.title %></a>
             </td>
 
             <td>

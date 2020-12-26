@@ -19,6 +19,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @cat = Category.all
   end
 
   # POST /books

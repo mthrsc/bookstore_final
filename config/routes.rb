@@ -50,6 +50,7 @@ Rails.application.routes.draw do
 
   get "/enable/:id" => "admin#enable"
   get "/disable/:id" => "admin#disable"
+  get "/book/edit/:id" => "books#edit"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
