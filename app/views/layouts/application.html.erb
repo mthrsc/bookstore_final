@@ -2,20 +2,20 @@
 <html>
 
 <head>
-    <title><%= yield(:title)  %> | Bookstore</title>
+    <title><%= yield(:title) %> | Bookstore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
 </head>
 
 <body>
-    <%= render 'layouts/header' %>
-    <div >      <!--class="container"-->
+    <%= render "layouts/header" %>
+    <div >      
         <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render "layouts/footer" %>
 </body>
 
 </html>

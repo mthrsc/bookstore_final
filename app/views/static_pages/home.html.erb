@@ -8,9 +8,9 @@
         <% @books.each do |book| %>
 
         <tr>
-            <%= link_to (image_tag book.image_url, :class => "smallImage"), book%>
+            <%= link_to (image_tag book.image_url, :class => "smallImage"), book %>
         </tr>
-        <%end%>
+        <% end %>
     </table>
 
     <h2><a href="/books">...or browse our stock</a></h2>

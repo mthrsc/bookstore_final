@@ -12,9 +12,6 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def about
-  end
-
   def category
     @catName = params[:title]
     @books = Book.where("genre like ? ", @catName)
