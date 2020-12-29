@@ -1,5 +1,5 @@
 <h2>You Searched Our Product Catalog For <%= @search_term %></h2>
-<% if @users.length == 0  %>
+<% if @users.length == 0 %>
 <br />
 <h2>No products were found to match your search</h2>
 <% end %>
@@ -7,28 +7,16 @@
     <% @users.each do |u| %>
         <tr>
             <td>
-                <a href="/showuser/<%=u.id%>"> ID: <%= u.id%> </a>
+                <a href="/showuser/<%= u.id %>"> ID: <%= u.id %> </a>
             </td>
             <td>
-                <a href="/showuser/<%=u.id%>"> Email: <%= u.email%></a>
+                <a href="/showuser/<%= u.id %>"> Email: <%= u.email %></a>
             </td>
             <td>
-                <a href="/showuser/<%=u.id%>"> Admin: <%= u.admin%></a>
+                <a href="/showuser/<%= u.id %>"> Admin: <%= u.admin %></a>
             </td>
 
             <td>
-                <!--     <div class="links">
-
-                <% if !u.admin%>
-                <a href="/promote/<%=u.id%>">Grant admin rights</a>
-                <% end %>
-                <% if u.admin%>
-                <a href="/demote/<%=u.id%>">Remove admin rights</a>
-                <% end %>
-
-                <a href="/deleteuser/<%=u.id%>">Delete user</a>  To replace with DISABLE!!! check devise, or add enabled field in database
-                </div>
-                -->
             </td>
         </tr>
         <% end %>

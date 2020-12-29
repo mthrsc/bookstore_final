@@ -29,17 +29,14 @@ class BooksController < ApplicationController
     $minPrice = 0.0
   end
 
-  # GET /books/1
   def show
   end
 
-  # GET /books/new
   def new
     @book = Book.new
     @cat = Category.all
   end
 
-  # GET /books/1/edit
   def edit
     @cat = Category.all
   end
