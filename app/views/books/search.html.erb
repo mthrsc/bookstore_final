@@ -6,7 +6,8 @@
     <% @books.each do |book| %>
     <tr>
         <td>
-            <div class="image"><%= link_to (image_tag book.image_url, :style => "height:100px"), book %>
+            <div>
+            <%= link_to (image_tag book.image_url, :style => "height:100px"), book %>
             </div>
             <div class="title">
                 <%= link_to book.title, book %>
@@ -17,13 +18,9 @@
             <div class="price">
                 <%= number_to_currency(book.price, :unit => "€") %>
             </div>
-            <div class="links">
-                <% if user_signed_in? %><%= link_to 'Edit', edit_book_path(book) %>
-                <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%else%>
-                <a href="/cart/<%= book.id %>">Add to Cart</a>
-                <%end%>
-            </div>
+            <p>
+                <a href="/cart/<%= book.id %>" class="buttonsearch">Add To Cart</a>
+            </p>
         </td>
     </tr>
     <% end %>

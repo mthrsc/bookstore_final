@@ -4,13 +4,11 @@ class BooksController < ApplicationController
   $maxPrice = 0.0
   $minPrice = 0.0
 
-  # GET /books
   def index
     puts "----- index min: #{$minPrice} --max: #{$maxPrice}"
 
     @b = Book.all
     @books = Array.new
-    puts "----- index b.length = #{@b.length()}"
 
     if $minPrice == 0.0 && $maxPrice == 0.0
       puts "----- index add all"
