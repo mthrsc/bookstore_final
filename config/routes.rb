@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :categories
+  resources :books
 
   get "orderbooks/index"
   get "orderbooks/show"
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   get "/checkout" => "cart#createOrder"
 
   get "cart/index"
-  resources :books
 
   get "/home" => "static_pages#home"
   get "/about" => "static_pages#about"
