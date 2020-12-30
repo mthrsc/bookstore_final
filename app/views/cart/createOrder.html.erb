@@ -34,4 +34,31 @@
         <td>Shipping &euro;<% @shipping %></td>
         <td>You Pay &euro; <%= @overall %></td>
     </tr>
+    <p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="sb-8ccjs4128056@business.example.com">
+
+  <!-- Specify a Buy Now button. -->
+  <input type="hidden" name="cmd" value="_xclick">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+    <% @cart.each do |id, quantity| %>
+    <% book = Book.find_by_id(id) %>
+        <input type="hidden" name="item_name" value="<%= book.title%>">
+        <input type="hidden" name="amount" value="<%= book.price%>">
+        <input type="hidden" name="currency_code" value="EUR">
+    <% end %>
+
+  <!-- Display the payment button. -->
+  <input type="image" name="submit" border="0"
+  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+  alt="Buy Now">
+  <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+ <input type="hidden" name="return" value="https://rails-container-liamme.c9users.io/" >
+</form>
+
+    </p>
 </table>
