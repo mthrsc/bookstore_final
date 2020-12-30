@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :categories
   root "static_pages#home"
+
+  resources :categories
 
   get "orderbooks/index"
   get "orderbooks/show"
@@ -52,6 +53,7 @@ Rails.application.routes.draw do
 
   get "/enable/:id" => "admin#enable"
   get "/disable/:id" => "admin#disable"
+
   get "/book/edit/:id" => "books#edit"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
